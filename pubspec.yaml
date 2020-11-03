@@ -1,8 +1,7 @@
 name: yin_pay
-description: A new Flutter plugin.
+description: flutter pay, add android alipay
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/yx544806988/yin_pay
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
