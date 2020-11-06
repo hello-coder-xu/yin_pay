@@ -32,7 +32,9 @@ android {
     }
 }
 
+
 dependencies {
     // 支付宝 SDK AAR 包所需的配置
     implementation fileTree(include: ['*.aar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
 }

@@ -1,5 +1,4 @@
-package com.addcn.yin_pay;
-
+package com.addcn.yin_pay_example;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -20,11 +19,7 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 import io.flutter.plugin.common.PluginRegistry.ActivityResultListener;
 
-
-/**
- * YinPayPlugin
- */
-public class YinPayPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
+public class TEst implements FlutterPlugin, MethodCallHandler, ActivityAware {
     private Activity activity;
     private MethodChannel channel;
     private Result result;
@@ -49,7 +44,7 @@ public class YinPayPlugin implements FlutterPlugin, MethodCallHandler, ActivityA
                 String resultValue = data.getStringExtra("result");
                 System.out.println("test onActivityResult requestCode= " + requestCode + " resultCode= " + resultCode);
                 if (result != null) {
-                    result.success(resultValue);
+                    result.success(result);
                 }
                 return false;
             }
@@ -83,7 +78,7 @@ public class YinPayPlugin implements FlutterPlugin, MethodCallHandler, ActivityA
             }
             AlipayUtil alipayUtil = new AlipayUtil(activity, result);
             alipayUtil.invokeAlipayNative(orderInfo);
-        } else if (value.equals("alipay_wap")) {
+        } else if (value.equals("alipay_wep")) {
             String url = (String) call.argument("url");
             if (TextUtils.isEmpty(url)) {
                 result.success("alipay error:url must be no null");
@@ -100,5 +95,4 @@ public class YinPayPlugin implements FlutterPlugin, MethodCallHandler, ActivityA
     public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
         channel.setMethodCallHandler(null);
     }
-
 }

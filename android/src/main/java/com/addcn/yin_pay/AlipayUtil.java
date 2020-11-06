@@ -1,11 +1,13 @@
 package com.addcn.yin_pay;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
+import android.webkit.WebView;
 
 import com.alipay.sdk.app.PayTask;
 
@@ -38,7 +40,6 @@ public class AlipayUtil {
                         // 该笔订单真实的支付结果，需要依赖服务端的异步通知。
                     }
                     String resultString = payResult.toJson();
-                    System.out.println("yin_pay alipay result =" + resultString);
                     result.success(resultString);
                     break;
                 }
@@ -50,8 +51,12 @@ public class AlipayUtil {
     };
 
 
-    ///调用支付宝
-    public void invokeAlipay(final String orderInfoValue) {
+    /**
+     * 调用-原生支付宝
+     *
+     * @param orderInfoValue 订单信息
+     */
+    public void invokeAlipayNative(final String orderInfoValue) {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -69,6 +74,20 @@ public class AlipayUtil {
         // 必须异步调用
         Thread payThread = new Thread(runnable);
         payThread.start();
+    }
+
+    /**
+     * 调用-网页支付宝
+     *
+     * @param url
+     */
+    public void invokeAlipayWep(String url) {
+        WebView.setWebContentsDebuggingEnabled(true);
+        Intent intent = new Intent(context, AlipayWapActivity.class);
+        Bundle extras = new Bundle();
+        extras.putString("url", url);
+        intent.putExtras(extras);
+        context.startActivityForResult(intent, 8591);
     }
 
 }
