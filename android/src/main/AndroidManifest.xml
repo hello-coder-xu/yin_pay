@@ -1,9 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.addcn.yin_pay">
 
-    <application
-        android:allowBackup="true"
-        android:label="yin_pay_example">
+    <application>
         <activity
             android:name="com.addcn.yin_pay.AlipayWapActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
