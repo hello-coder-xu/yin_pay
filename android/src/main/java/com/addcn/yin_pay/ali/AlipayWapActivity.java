@@ -1,4 +1,4 @@
-package com.addcn.yin_pay;
+package com.addcn.yin_pay.ali;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -25,27 +25,8 @@ public class AlipayWapActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle extras = null;
-        try {
-            extras = getIntent().getExtras();
-        } catch (Exception e) {
-            finishAndCallBack(400, "extras must be not null");
-            return;
-        }
-        if (extras == null) {
-            finishAndCallBack(400, "extras must be not null");
-            return;
-        }
-        String url = null;
-        try {
-            url = extras.getString("url");
-        } catch (Exception e) {
-            finishAndCallBack(400, "url must be not null");
-            return;
-        }
-        if (TextUtils.isEmpty(url)) {
-            finishAndCallBack(400, "url must be not null");
-        }
+        Bundle extras = getIntent().getExtras();
+        String url = extras.getString("url");
 
         super.requestWindowFeature(Window.FEATURE_NO_TITLE);
         LinearLayout layout = new LinearLayout(getApplicationContext());

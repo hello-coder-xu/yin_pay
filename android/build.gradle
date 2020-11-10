@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.android.tools.build:gradle:4.1.0'
     }
 }
 
@@ -36,5 +36,6 @@ android {
 dependencies {
     // 支付宝 SDK AAR 包所需的配置
     implementation fileTree(include: ['*.aar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.6.5'
 }
