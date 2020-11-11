@@ -15,7 +15,7 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 
 public class WXAPiHandler {
-    private static IWXAPI wxApi = null;
+    public static IWXAPI wxApi = null;
     private static Context context = null;
 
     public static void setContext(Context ctx) {
@@ -34,7 +34,7 @@ public class WXAPiHandler {
             api.registerApp(appId);
             wxApi = api;
         }
-        result.success(true);
+        result.success("1");
     }
 
 
@@ -42,7 +42,7 @@ public class WXAPiHandler {
         if (wxApi == null) {
             result.error("0", "请先初始化IWXApi", null);
         } else {
-            result.success(wxApi.isWXAppInstalled());
+            result.success("1");
         }
     }
 

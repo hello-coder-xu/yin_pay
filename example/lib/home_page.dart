@@ -20,13 +20,13 @@ class HomePage extends StatelessWidget {
     ));
 
     children.add(RaisedButton(
-      child: Text('微信是否安装'),
-      onPressed: () => isInstallWeChatApp(context),
+      child: Text('微信注册'),
+      onPressed: () => registerWeChatApp(context),
     ));
 
     children.add(RaisedButton(
-      child: Text('微信注册'),
-      onPressed: () => registerWeChatApp(context),
+      child: Text('微信是否安装'),
+      onPressed: () => isInstallWeChatApp(context),
     ));
 
     children.add(RaisedButton(
@@ -66,14 +66,15 @@ class HomePage extends StatelessWidget {
 
   ///判断微信是否安装
   void isInstallWeChatApp(BuildContext context) async {
-    bool isInstalled = await YinPay.invokeWeChatInstalled();
+    String isInstalled = await YinPay.invokeWeChatInstalled();
     print('test wechat isInstalled=$isInstalled');
   }
 
   ///注册微信
   void registerWeChatApp(BuildContext context) async {
-    String appId = '';
-    await YinPay.invokeWeChatRegister(appId);
+    String appId = 'wx6f0b2b2781995935';
+    String value = await YinPay.invokeWeChatRegister(appId);
+    print('test value=$value');
   }
 
   ///获取微信Code

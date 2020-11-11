@@ -18,7 +18,7 @@ import io.flutter.plugin.common.PluginRegistry.ActivityResultListener;
 
 import com.addcn.yin_pay.ali.AliApiHandler;
 import com.addcn.yin_pay.wx.WXAPiHandler;
-import com.addcn.yin_pay.wx.WXEntryActivity;
+import com.addcn.yin_pay.wx.WXApiActivity;
 
 /**
  * YinPayPlugin
@@ -87,10 +87,10 @@ public class YinPayPlugin implements FlutterPlugin, MethodCallHandler, ActivityA
         } else if (value.equals("wechat_install")) {
             WXAPiHandler.isWeChatInstalled(result);
         } else if (value.equals("wechat_get_code")) {
-            WXEntryActivity.setResult(result);
+            WXApiActivity.setResult(result);
             WXAPiHandler.sendAuth();
         } else if (value.equals("wechat_pay")) {
-            WXEntryActivity.setResult(result);
+            WXApiActivity.setResult(result);
             WXAPiHandler.pay(call, result);
         } else {
             result.notImplemented();

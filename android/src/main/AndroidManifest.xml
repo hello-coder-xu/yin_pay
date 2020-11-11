@@ -8,17 +8,23 @@
             android:exported="false"
             android:screenOrientation="behind" />
 
+
+        <activity
+            android:name="com.addcn.yin_pay.wx.WXApiActivity"
+            android:exported="true"
+            android:launchMode="singleInstance" />
+
+
         <activity-alias
             android:name="${applicationId}.wxapi.WXEntryActivity"
             android:exported="true"
             android:launchMode="singleTask"
-            android:targetActivity=".wx.WXEntryActivity"
+            android:targetActivity="com.addcn.yin_pay.wx.WXApiActivity"
             android:taskAffinity="${applicationId}"
             android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:scheme="sdksample" />
             </intent-filter>
         </activity-alias>
 
@@ -26,13 +32,12 @@
             android:name="${applicationId}.wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTask"
-            android:targetActivity=".wx.WXEntryActivity"
+            android:targetActivity="com.addcn.yin_pay.wx.WXApiActivity"
             android:taskAffinity="${applicationId}"
             android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:scheme="sdksample" />
             </intent-filter>
         </activity-alias>
     </application>

@@ -16,12 +16,12 @@ class YinPay {
   }
 
   static Future<String> invokeWeChatRegister(String appId) async {
-    final String result = await _channel.invokeMethod('wechat_register', {'appid': appId});
+    final String result = await _channel.invokeMethod('wechat_register', {'appId': appId});
     return result;
   }
 
-  static Future<bool> invokeWeChatInstalled() async {
-    final bool result = await _channel.invokeMethod('wechat_install');
+  static Future<String> invokeWeChatInstalled() async {
+    final String result = await _channel.invokeMethod('wechat_install');
     return result;
   }
 
