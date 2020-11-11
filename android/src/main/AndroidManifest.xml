@@ -12,7 +12,8 @@
         <activity
             android:name="com.addcn.yin_pay.wx.WXApiActivity"
             android:exported="true"
-            android:launchMode="singleInstance" />
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
 
         <activity-alias
