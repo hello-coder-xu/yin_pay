@@ -15,7 +15,7 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 
 public class AliApiHandler {
-
+    private static String TAG = "AliApiHandler";
     private static Activity context;
 
     public static void setContext(Activity ctx) {
@@ -37,7 +37,7 @@ public class AliApiHandler {
             public void run() {
                 PayTask alipay = new PayTask(context);
                 final Map<String, String> resultValue = alipay.payV2(orderInfo, true);
-                Log.i("msp", resultValue.toString());
+                Log.d(TAG, resultValue.toString());
 
                 context.runOnUiThread(new Runnable() {
                     @Override

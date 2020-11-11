@@ -62,7 +62,7 @@ public class WXApiActivity extends Activity implements IWXAPIEventHandler {
 
     @Override
     public void onReq(BaseReq baseReq) {
-        System.out.println("test WXApiActivity onReq openid = " + baseReq.openId);
+        System.out.println("test WXApiActivity onReq ");
 
         finish();
     }
@@ -78,7 +78,7 @@ public class WXApiActivity extends Activity implements IWXAPIEventHandler {
             // 接口最好由服务器去请求，防止secret泄漏
             SendAuth.Resp authResp = (SendAuth.Resp) baseResp;
             final String code = authResp.code;
-            System.out.println("test code=" + code);
+            Log.d(TAG, "test WXEntryActivity onResp uesr code = " + code);
             if (result != null) {
                 result.success(code);
             } else {
