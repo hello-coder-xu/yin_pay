@@ -42,7 +42,7 @@ public class WXAPiHandler {
         if (wxApi == null) {
             result.error("0", "请先初始化IWXApi", null);
         } else {
-            result.success("1");
+            result.success(wxApi.isWXAppInstalled() ? "1" : "0");
         }
     }
 

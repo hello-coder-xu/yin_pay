@@ -72,7 +72,7 @@ class HomePage extends StatelessWidget {
 
   ///注册微信
   void registerWeChatApp(BuildContext context) async {
-    String appId = 'wx6f0b2b2781995935';
+    String appId = 'wx1234567890123456';
     String value = await YinPay.invokeWeChatRegister(appId);
     print('test value=$value');
   }
@@ -90,7 +90,7 @@ class HomePage extends StatelessWidget {
   void weChatPay(BuildContext context) async {
     ///apk 签名需要与微信开放平台设置一致
     String orderInfo =
-        "{\"appid\":\"wx6f0b2b2781995935\",\"noncestr\":\"mb3x2f7pui60cmz1k71z1l7jjd2fvmj7\",\"package\":\"Sign=WXPay\",\"partnerid\":\"1493297612\",\"prepayid\":\"wx10164731896324b7d7593401647b2c0000\",\"timestamp\":\"1604998051\",\"sign\":\"849E5A6307FD1FE67E82B0A0F46AE4F9\"}";
+        "{\"appid\":\"wx1234567890123456\",\"noncestr\":\"mb3x2f7pui60cmz1k71z1l7jjd2fvmj7\",\"package\":\"Sign=WXPay\",\"partnerid\":\"1234567890\",\"prepayid\":\"wx10164731896324b7d7593401647b2c0000\",\"timestamp\":\"1604998051\",\"sign\":\"849E5A6307FD1FE67E82B0A0F46AE4F9\"}";
     String result = await YinPay.invokeWeChatPay(orderInfo);
     print('test result=$result');
   }
