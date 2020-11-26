@@ -57,7 +57,7 @@ public class AlipayWapActivity extends Activity {
 
         // 启用 WebView 调试模式。
         // 注意：请勿在实际 App 中打开！
-        WebView.setWebContentsDebuggingEnabled(true);
+//        WebView.setWebContentsDebuggingEnabled(true);
     }
 
     @Override

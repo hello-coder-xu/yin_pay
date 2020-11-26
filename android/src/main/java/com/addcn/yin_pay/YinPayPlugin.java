@@ -49,10 +49,14 @@ public class YinPayPlugin implements FlutterPlugin, MethodCallHandler, ActivityA
         binding.addActivityResultListener(new ActivityResultListener() {
             @Override
             public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
-                String resultValue = data.getStringExtra("result");
                 System.out.println("test onActivityResult requestCode= " + requestCode + " resultCode= " + resultCode);
-                if (result != null) {
-                    result.success(resultValue);
+                if (resultCode == Activity.RESULT_OK && requestCode == 200 && data != null) {
+                    if (data.hasExtra("result")) {
+                        String resultValue = data.getStringExtra("result");
+                        if (result != null) {
+                            result.success(resultValue);
+                        }
+                    }
                 }
                 return false;
             }
