@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:yin_pay/yin_pay.dart';
 import 'package:yin_pay_example/home_page.dart';
 
 void main() {

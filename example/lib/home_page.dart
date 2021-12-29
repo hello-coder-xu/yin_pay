@@ -9,32 +9,32 @@ class HomePage extends StatelessWidget {
   Widget contentView(BuildContext context) {
     List<Widget> children = [];
 
-    children.add(RaisedButton(
+    children.add(ElevatedButton(
       child: Text('支付宝Native'),
       onPressed: () => toAlipayByNative(context),
     ));
 
-    children.add(RaisedButton(
+    children.add(ElevatedButton(
       child: Text('支付宝Wap'),
       onPressed: () => toAlipayByWap(context),
     ));
 
-    children.add(RaisedButton(
+    children.add(ElevatedButton(
       child: Text('微信注册'),
       onPressed: () => registerWeChatApp(context),
     ));
 
-    children.add(RaisedButton(
+    children.add(ElevatedButton(
       child: Text('微信是否安装'),
       onPressed: () => isInstallWeChatApp(context),
     ));
 
-    children.add(RaisedButton(
+    children.add(ElevatedButton(
       child: Text('获取微信Code'),
       onPressed: () => getWeChatCode(context),
     ));
 
-    children.add(RaisedButton(
+    children.add(ElevatedButton(
       child: Text('微信支付'),
       onPressed: () => weChatPay(context),
     ));

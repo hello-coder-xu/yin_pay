@@ -20,7 +20,7 @@ class AlipayWapPageState extends State<AlipayWapPage> {
     ));
 
     children.add(Container(
-      child: RaisedButton(
+      child: ElevatedButton(
         onPressed: invokeAlipayByWap,
         child: Text('调用支付宝Wap'),
       ),

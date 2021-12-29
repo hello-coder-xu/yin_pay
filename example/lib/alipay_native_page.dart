@@ -37,7 +37,7 @@ class AlipayNativePageState extends State<AlipayNativePage> {
     ));
 
     String value = isHk ? 'Alipay Hk' : '支付宝';
-    children.add(RaisedButton(
+    children.add(ElevatedButton(
       onPressed: invokePay,
       child: Text('唤起$value'),
     ));
